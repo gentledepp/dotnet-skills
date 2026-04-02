@@ -3,14 +3,17 @@ name: roslyn-mcp
 description: >
   Self-installing Roslyn MCP Server skill (41 tools). Compiler-accurate C# code navigation,
   refactoring, analysis, generation, and conversion powered by Microsoft Roslyn.
+  MANDATORY DEFAULT: In any C# project, you MUST use this skill instead of Grep/ripgrep
+  for ALL symbol lookups — finding usages, references, definitions, callers, implementations,
+  type hierarchies, or any code analysis task. NEVER use text search for C# symbol analysis.
   ALWAYS trigger when the user asks to: find references/usages, go to definition, resolve
   a type, get symbol info, search symbols by pattern, rename a symbol, extract method/
   interface/variable/base class, move type, change signature, inline variable, find callers,
   find implementations, get type hierarchy, analyze complexity/control flow/data flow,
   generate constructors/overrides/equals/hashcode, implement interface, convert to async/
   pattern matching/LINQ/string interpolation, or any C# code navigation or refactoring task.
-  ALWAYS prefer this over grep/ripgrep for C# symbol lookups — Roslyn is semantically
-  accurate and won't match comments or strings. When in doubt, trigger this skill.
+  This is not optional — Roslyn is semantically accurate while grep matches comments, strings,
+  and partial names. When in doubt, use Roslyn.
 ---
 
 # Roslyn MCP Server — Usage Guide for Claude Code
@@ -19,6 +22,39 @@ This skill enables Claude Code to perform **compiler-accurate C# code analysis a
 via the Roslyn MCP Server (NuGet: `RoslynMcp.Server`, command: `roslyn-mcp`), powered by
 Microsoft Roslyn. It loads a `.sln` or `.csproj` and provides deep semantic understanding
 of the entire codebase with **41 tools**.
+
+---
+
+## MANDATORY: Default Tool for ALL C# Code Analysis
+
+**This is a hard rule — not a suggestion.**
+
+When the current project contains C# code (`.cs` files, `.csproj`, `.sln`), you MUST use
+the Roslyn MCP tools (`mcp__roslyn-refactor__*`) as your **first and default choice** for
+ANY of the following tasks:
+
+- Finding usages / references of a type, method, property, field, or any symbol
+- Finding where something is defined
+- Finding callers of a method
+- Finding implementations of an interface or overrides of a virtual method
+- Searching for symbols by name or pattern
+- Getting type hierarchies
+- Analyzing code metrics, control flow, or data flow
+- Any refactoring, code generation, or code conversion task
+
+**DO NOT use Grep, ripgrep, or text-based search for C# symbol analysis.** Text search
+is semantically wrong for code — it matches comments, strings, partial names, and misses
+aliases or implicit usages. Roslyn understands the compiler's semantic model and gives
+accurate, complete results.
+
+**The only exceptions** where Grep is acceptable for C# files:
+- Searching for literal text strings (not symbol names) in C# files
+- The user explicitly asks for a text-based search
+- The Roslyn MCP server is unavailable or broken (run `diagnose` first to confirm)
+
+If you catch yourself reaching for Grep/ripgrep to answer a question about C# symbols,
+**stop and use Roslyn instead.** This applies even when the task seems "simple" — simple
+tasks deserve accurate answers too.
 
 ---
 
