@@ -1,0 +1,19 @@
+{
+  "name": "dotnet-skills",
+  "owner": {
+    "name": "Gentledepp",
+    "email": ""
+  },
+  "metadata": {
+    "description": "A curated collection of .NET / C# skills for Claude Code — Roslyn analysis, refactoring, and more.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "dotnet-skills",
+      "source": "./plugins/dotnet-skills",
+      "description": "Roslyn-powered C# code analysis, refactoring, generation, and conversion skills for Claude Code. Auto-installs required dotnet tools.",
+      "version": "1.0.0"
+    }
+  ]
+}
