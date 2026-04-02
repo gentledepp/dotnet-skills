@@ -4,6 +4,8 @@ A curated collection of **.NET / C# skills** for [Claude Code](https://code.clau
 
 ## Installation
 
+run claude code in your bash.
+
 ```bash
 # 1. Add the marketplace
 /plugin marketplace add Gentledepp/dotnet-skills
