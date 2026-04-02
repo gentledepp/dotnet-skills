@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "A curated collection of .NET / C# skills for Claude Code — Roslyn analysis, refactoring, and more.",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "dotnet-skills",
       "source": "./plugins/dotnet-skills",
-      "description": "Roslyn-powered C# code analysis, refactoring, generation, and conversion skills for Claude Code. Auto-installs required dotnet tools.",
-      "version": "1.0.0"
+      "description": "Roslyn-powered C# code analysis, refactoring, generation, and conversion skills plus ILSpy assembly decompilation for Claude Code. Auto-installs required dotnet tools.",
+      "version": "1.1.0"
     }
   ]
 }

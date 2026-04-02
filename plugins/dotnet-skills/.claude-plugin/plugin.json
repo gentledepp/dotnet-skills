@@ -1,7 +1,7 @@
 {
   "name": "dotnet-skills",
-  "version": "1.0.0",
-  "description": "Roslyn-powered C# code analysis, refactoring, generation, and conversion skills for Claude Code. Auto-installs required dotnet tools.",
+  "version": "1.1.0",
+  "description": "Roslyn-powered C# code analysis, refactoring, generation, and conversion skills plus ILSpy assembly decompilation for Claude Code. Auto-installs required dotnet tools.",
   "author": {
     "name": "Gentledepp"
   }
