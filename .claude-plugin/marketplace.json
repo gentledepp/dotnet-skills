@@ -5,15 +5,42 @@
     "email": ""
   },
   "metadata": {
-    "description": "A curated collection of .NET / C# skills for Claude Code — Roslyn analysis, refactoring, and more.",
-    "version": "1.1.0"
+    "description": "A curated collection of .NET / C# skills for Claude Code — Roslyn analysis, refactoring, Avalonia DevTools, and more.",
+    "version": "1.2.0",
+    "skills": [
+      {
+        "name": "roslyn-mcp",
+        "description": "41 Roslyn-powered tools for C# code navigation, refactoring, code generation, and syntax conversion. Compiler-accurate symbol lookup, find references, go to definition, rename, extract method, convert to async, and more.",
+        "autoInstalls": "RoslynMcp.Server (.NET 9 global tool)"
+      },
+      {
+        "name": "ilspy-mcp",
+        "description": "8 tools for decompiling and analyzing compiled .NET assemblies (DLLs). Inspect NuGet packages, framework libraries, and third-party DLLs without source code.",
+        "autoInstalls": "ILSpyMcp.Server (.NET 9 global tool)"
+      },
+      {
+        "name": "avalonia-devtools",
+        "description": "16 tools for connecting to running Avalonia applications to inspect visual trees, capture screenshots, modify properties, send input events, and iterate on XAML layouts. Requires an Avalonia Accelerate license key.",
+        "autoInstalls": "avdt (.NET 9 global tool)"
+      },
+      {
+        "name": "dotnet-wsl",
+        "description": "Ensures dotnet commands work correctly in WSL by routing them through the Windows dotnet.exe binary. Prevents NuGet fallback folder and SDK resolution failures on Windows-mounted drives.",
+        "autoInstalls": null
+      },
+      {
+        "name": "unit-tests",
+        "description": "Guided workflow for creating verified unit tests with a strict red/green cycle. One test per behavior, each verified to fail before implementation and pass after.",
+        "autoInstalls": null
+      }
+    ]
   },
   "plugins": [
     {
       "name": "dotnet-skills",
       "source": "./plugins/dotnet-skills",
-      "description": "Roslyn-powered C# code analysis, refactoring, generation, and conversion skills plus ILSpy assembly decompilation for Claude Code. Auto-installs required dotnet tools.",
-      "version": "1.1.0"
+      "description": "Roslyn-powered C# code analysis, refactoring, generation, and conversion skills, ILSpy assembly decompilation, and Avalonia DevTools UI inspection for Claude Code. Auto-installs required dotnet tools.",
+      "version": "1.2.0"
     }
   ]
 }
