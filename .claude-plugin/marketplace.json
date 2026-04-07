@@ -24,6 +24,11 @@
         "autoInstalls": "avdt (.NET 9 global tool)"
       },
       {
+        "name": "avalonia-buildtools",
+        "description": "5 tools and 4 prompts for accessing Avalonia documentation, API references, expert development rules, and migration guidance via a remote MCP server. Free — no license key or installation required.",
+        "autoInstalls": null
+      },
+      {
         "name": "dotnet-wsl",
         "description": "Ensures dotnet commands work correctly in WSL by routing them through the Windows dotnet.exe binary. Prevents NuGet fallback folder and SDK resolution failures on Windows-mounted drives.",
         "autoInstalls": null
